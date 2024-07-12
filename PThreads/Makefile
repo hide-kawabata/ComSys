@@ -2,12 +2,15 @@
 #CXX = c++-13
 CXX = clang
 
-TARGET = hello
+TARGET = hello mc_pth
 
 top: hello
 
 hello: hello.o
-	$(CXX) -o $@ $<
+	$(CXX) -o $@ $< -pthread
+
+mc_pth: mc_pth.o
+	$(CXX) -o $@ $< -pthread
 
 .c.o:
 	$(CXX) -O3 -c $< -pthread
