@@ -16,7 +16,7 @@ int main() {
     int arg[NTH];
     printf("I'm the main thread.\n");
     for (i = 0; i < NTH; i++) {
-        arg[i] = i;
+        arg[i] = i * 100;
         pthread_create(&tid[i], NULL, thread, &arg[i]);
     }
     for (i = 0; i < NTH; i++) {
