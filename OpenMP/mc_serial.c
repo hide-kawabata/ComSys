@@ -10,10 +10,11 @@ int main() {
     long int n = (long)N;
     long int m = 0;
     struct timespec ts_start, ts_stop;
-    srand(0);
+//    srand(0);
 
     clock_gettime(CLOCK_REALTIME, &ts_start);
 
+    srand(ts_start.tv_nsec);
     long int m_local = 0;
     for (i = 0; i < n; i++) {
         x = ((double)rand()) / ((double)RAND_MAX);
