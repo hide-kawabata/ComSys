@@ -1,4 +1,5 @@
 # 「コンピュータシステム」関連資料
 ## マルチスレッドプログラミング
 - OpenMP
-- PThreads
+- POSIX Threads (Pthreads)
+- MPI
