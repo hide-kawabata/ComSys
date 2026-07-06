@@ -9,7 +9,7 @@
 #define N (1000*1000*1000)
 
 int long m;
-pthread_mutex_t m_lock;
+pthread_mutex_t m_lock = PTHREAD_MUTEX_INITIALIZER;
 
 void *worker(void *vargp) {
     long int m_local = 0;

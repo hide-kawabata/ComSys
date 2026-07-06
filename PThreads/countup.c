@@ -4,7 +4,7 @@
 
 #define N 1000
 int x;
-pthread_mutex_t m;
+pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;
 
 #define MX // perform mutual exclusion
 
