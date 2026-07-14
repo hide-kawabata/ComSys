@@ -15,6 +15,9 @@ mc_pth: mc_pth.o
 countup: countup.o
 	$(CXX) -o $@ $< -pthread
 
+countup_simple: countup_simple.o
+	$(CXX) -o $@ $< -pthread
+
 race: race.o
 	$(CXX) -o $@ $< -pthread
 

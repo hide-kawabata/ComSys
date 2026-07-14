@@ -4,7 +4,8 @@
 
 #define N 1000
 int x;
-pthread_mutex_t m;
+// static initialization of mutex
+pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;
 
 #define MX // perform mutual exclusion
 
@@ -23,7 +24,6 @@ void *func(void *args) {
 int main() {
     int i;
     pthread_t pth[N];
-    pthread_mutex_init(&m, NULL);
     for (i = 0; i < N; i++) {
         pthread_create(&pth[i], NULL, func, NULL);
     }

@@ -2,7 +2,7 @@
 #include <pthread.h>
 #include <unistd.h>
 
-#define NTH 10
+#define NTH 3
 
 void *thread(void *vargp) {
     usleep(1000);
