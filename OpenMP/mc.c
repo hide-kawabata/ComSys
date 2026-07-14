@@ -38,18 +38,12 @@ int main() {
     long int m_local = 0;
 #pragma omp parallel private(m_local, x, y)
     {
-//        unsigned int seed = omp_get_thread_num();
-        unsigned int seed = ts_start.tv_nsec;
+        unsigned int seed = omp_get_thread_num();
         m_local = 0;
 #pragma omp for
         for (i = 0; i < n; i++) {
-#if 0
-            x = ((double)rand()) / ((double)RAND_MAX);
-            y = ((double)rand()) / ((double)RAND_MAX);
-#else
             x = ((double)rand_r(&seed)) / ((double)RAND_MAX);
             y = ((double)rand_r(&seed)) / ((double)RAND_MAX);
-#endif
             if (x*x + y*y <= 1.0) {
                 m_local += 1;
             }

@@ -38,8 +38,7 @@ int main() {
 #pragma omp parallel
     {
         double x, y;
-//        unsigned int seed = omp_get_thread_num();
-        unsigned int seed = ts_start.tv_nsec;
+        unsigned int seed = omp_get_thread_num();
         long int m_local = 0;
 #pragma omp for
         for (i = 0; i < n; i++) {
